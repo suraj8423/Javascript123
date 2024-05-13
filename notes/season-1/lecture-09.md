@@ -98,3 +98,52 @@ Watch Live On Youtube below:
 
 <a href="https://www.youtube.com/watch?v=lW_erSjyMeM&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/lW_erSjyMeM/0.jpg" width="750"
 alt="Block Scope & Shadowing in JS Youtube Link"/></a>
+
+
+
+* Additional Points in Block : 
+* So the question is what is the need to combine all these javascript code into groups?
+* Answer is we use to group the multiple javascript statements in block so that we can use them where javascript is expexting one statement.
+
+* Definition for Block scope : What are the different variables and function we can access inside this block.
+
+* If we already have var what is the use of let and const : This we could understand by one example 
+
+ ```js
+for (let i = 0; i < 3; i++) {
+  setTimeout(function () {
+    console.log(this.i);
+    console.log(i);
+  }, 1000);
+}
+console.log("var");
+for (var i = 0; i < 3; i++) {
+  setTimeout(function () {
+    console.log(this.i);
+    console.log(i);
+  }, 1000);
+}
+```
+Loop with var:
+
+Iteration 1: i is declared and initialized to 0. The setTimeout function is called, but it doesn't execute immediately; it's scheduled to execute after 1000 milliseconds. i is captured by the setTimeout callback function.
+
+Iteration 2: i is incremented to 1. Another setTimeout function is called, capturing the updated value of i (1).
+
+Iteration 3: i is incremented to 2. Another setTimeout function is called, capturing the updated value of i (2).
+
+After 1000 milliseconds, all three setTimeout callbacks execute, each logging the value of i, which is now 3.
+So, the output will be 3 printed three times.
+
+Loop with let:
+
+Iteration 1: i is block-scoped to the loop body and initialized to 0. The setTimeout function is called, capturing the value of i (0).
+
+Iteration 2: A new block-scoped i is created and initialized to 1. Another setTimeout function is called, capturing this new value of i (1).
+
+Iteration 3: Another new block-scoped i is created and initialized to 2. Another setTimeout function is called, capturing this new value of i (2).
+
+After 1000 milliseconds, each setTimeout callback executes, logging the value of i captured at the time of its creation.
+So, the output will be 0, 1, and 2 each printed once.
+
+In summary, with var, there's only one variable i shared across all iterations, which leads to the final value of i being captured by all setTimeout callbacks. With let, each iteration of the loop gets its own block-scoped i, preserving the expected value for each setTimeout callback.

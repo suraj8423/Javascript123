@@ -74,3 +74,28 @@ Watch Live On Youtube below:
 
 <a href="https://www.youtube.com/watch?v=BNC6slYCj50&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/BNC6slYCj50/0.jpg" width="750"
 alt="let & const in JS, Temporal Dead Zone Youtube Link"/></a>
+
+
+
+
+
+
+* Extra knowledge points : 
+ console.log(this.a); // undefined
+ let a = 10;
+ console.log(a);  // 10 
+ console.log(this.a); // undefined
+ console.log(this.b); // undefined
+
+ * why when we are using this.a it is not giving reference error ? 
+
+ * In JavaScript, using this.a doesn't throw a reference error even if a is not declared or initialized. This is because this refers to the global object in non-strict mode, and accessing a non-existent property on the global object simply returns undefined instead of throwing a reference error.
+
+* Here's what happens in your code:
+
+* console.log(this.a);: Since this refers to the global object (assuming this code is running in a browser), and a is not declared or initialized, this.a returns undefined.
+* let a;: Declares a variable a, but does not initialize it. It's declared in the current scope.
+* console.log(a);: Outputs undefined because a is declared but not initialized yet.
+* console.log(this.a);: Again, since this.a refers to the global object and a is still undefined, it returns undefined.
+* So, you never encounter a reference error because JavaScript gracefully handles accessing properties of this that don't exist by returning undefined.
+

@@ -50,7 +50,7 @@ function a() {
 a();
 console.log(b); // Error, Not Defined
 ```
-
+* Scope : Where you can access the specific variable or function inside our code.
 * Let's try to understand the output in each of the cases above.
   * In **case 1**: function a is able to access variable b from Global scope.
   * In **case 2**: 10 is printed. It means that within nested function too, the global scope variable can be accessed.
