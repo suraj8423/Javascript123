@@ -55,6 +55,7 @@ var b = function xyz() {
 b(); // "b called"
 xyz(); // Throws ReferenceError:xyz is not defined.
 // xyz function is not created in global scope. So it can't be called.
+// here xyz will work as local variable instead and we can call it inside function xyz()
 ```
 
 ### Q: Parameters vs Arguments?
@@ -66,6 +67,7 @@ b(arg1, arg2); // arguments - values passed inside function call
 ```
 
 ### Q: What is First Class Function aka First Class Citizens?
+Ability to be used like values
 We can pass functions inside a function as arguments and 
 /or return a function(HOF). These ability are altogether known as First class function. It is programming concept available in some other languages too.
 ```js

@@ -3,6 +3,16 @@
 ### Callback Functions
 * Functions are first class citizens ie. take a function A and pass it to another function B. Here, A is a callback function. So basically I am giving access to function B to call function A. This callback function gives us the access to whole **Asynchronous** world in **Synchronous** world.
 ```js
+function x(callback function) {
+
+}
+x(function y(){
+
+})
+//so what are we doing here is we are passing the function y to x and giving the responsibility of y to x so whenever it is needed for to x it will call y and that is callback
+
+```
+```js
 setTimeout(function () {
     console.log("Timer");
 }, 1000) // first argument is callback function and second is timer.
@@ -73,6 +83,8 @@ setTimeout(function () {
         });
         }
         attachEventList();
+
+        // Go in the Element then in the event listener and see the scope of it you will find the global scope and the closure 
         ```
         ![Event Listerner Demo](/assets/event.jpg)
 

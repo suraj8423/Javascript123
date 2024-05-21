@@ -16,6 +16,18 @@
     ```
     * In above code, When y is returned, not only is the function returned but the entire closure (fun y + its lexical scope) is returned and put inside z. So when z is used somewhere else in program, it still remembers var a inside x()
 
+  ```js
+    function x() {
+        var a = 7;
+        function y() {
+            console.log(a);
+        }
+        a=100
+        return y;
+    }
+    var z = x();
+    console.log(z());  // it will console 100 because lexical enviroment does not not point to exact value but points to reference of the value, javascript goes to the reference and see what is the current value.
+    ```
 * Another Example
 ```js
     function z() {
