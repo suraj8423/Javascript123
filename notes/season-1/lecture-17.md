@@ -51,3 +51,8 @@ Watch Live On Youtube below:
 
 <a href="https://www.youtube.com/watch?v=nqsPmuicJJc&ab_channel=AkshaySaini" target="_blank"><img src="https://img.youtube.com/vi/nqsPmuicJJc/0.jpg" width="750"
 alt="Trust issues with setTimeout() in JS Youtube Link"/></a>
+
+
+```js
+JavaScript is an interpreted language, meaning it's executed line by line by the JavaScript engine in the browser or other environments. This means errors may only be discovered when the code is actually run.
+```

@@ -12,6 +12,7 @@ None of the below are part of Javascript! These are extra superpowers that brows
 ![Event Loop 2 Demo](/assets/eventloop2.jpg)
 
 * setTimeout(), DOM APIs, fetch(), localstorage, console (yes, even console.log is not JS!!), location and so many more.
+    * These are web API's and not part of Javascript. These are the part of the Browser.
     * setTimeout() : Timer function
     * DOM APIs : eg.Document.xxxx ; Used to access HTML DOM tree. (Document Object Manipulation)
     * fetch() : Used to make connection with external servers eg. Netflix servers etc.
