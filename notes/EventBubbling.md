@@ -66,4 +66,4 @@ document.getElementById('inner').addEventListener('click', function(event) {
 ```
 * So the event propogation will still work but the point it will see the e.stopPropogation() propagation will stop there only.
 
-* Point to remember is Capturing works from Top ----> Bottom and Bubbling works from Bottom to Top.
+* Point to remember is Capturing works from Top ----> Bottom and Bubbling works from Bottom ----> Top.
