@@ -115,3 +115,56 @@
 //   });
 // }
 // attachEventList();
+
+// console.log("this");
+// var tem = { name: "hello", address: "234" };
+
+// var Person = function (pName) {
+//   var name = pName;
+
+//   this.getName = function () {
+//     return name;
+//   };
+// };
+
+// var person = new Person("Neelesh");
+// console.log(person.getName());
+
+// const getData = () => {
+//   console.log("fetchingData");
+// };
+
+// const handleKeyUp = (fn, time) => {
+//   let timer;
+//   return function () {
+//     const context = this;
+//     const agr = arguments;
+//     clearTimeout(timer);
+//     timer = setTimeout(() => {
+//       getData.apply(context, agr);
+//     }, time);
+//   };
+// };
+
+// const betterFunction = handleKeyUp(getData, 600);
+
+const getData = () => {
+  console.log("Throtalling is called");
+};
+
+handleThrotalling = (fun, timeInterval) => {
+  let flag = true;
+  return function () {
+    if (flag) {
+      fun();
+      flag = false;
+      setTimeout(() => {
+        flag = true;
+      }, timeInterval);
+    }
+  };
+};
+
+const betterFunctionForThrottling = handleThrotalling(getData, 1000);
+
+window.addEventListener("resize", betterFunctionForThrottling);
