@@ -148,23 +148,55 @@
 
 // const betterFunction = handleKeyUp(getData, 600);
 
-const getData = () => {
-  console.log("Throtalling is called");
-};
+// const getData = () => {
+//   console.log("Throtalling is called");
+// };
 
-handleThrotalling = (fun, timeInterval) => {
-  let flag = true;
-  return function () {
-    if (flag) {
-      fun();
-      flag = false;
-      setTimeout(() => {
-        flag = true;
-      }, timeInterval);
-    }
-  };
-};
+// handleThrotalling = (fun, timeInterval) => {
+//   let flag = true;
+//   return function () {
+//     if (flag) {
+//       fun();
+//       flag = false;
+//       setTimeout(() => {
+//         flag = true;
+//       }, timeInterval);
+//     }
+//   };
+// };
 
-const betterFunctionForThrottling = handleThrotalling(getData, 1000);
+// const betterFunctionForThrottling = handleThrotalling(getData, 1000);
 
-window.addEventListener("resize", betterFunctionForThrottling);
+// window.addEventListener("resize", betterFunctionForThrottling);
+
+// document.getElementById('outer').addEventListener('click', function(event) {
+//   console.log('Outer Div Clicked - Bubbling Phase');
+// });
+
+// document.getElementById('inner').addEventListener('click', function(event) {
+//   console.log('Inner Div Clicked - Bubbling Phase');
+// });
+
+document.getElementById("outerDiv").addEventListener(
+  "click",
+  function (event) {
+    console.log("Outer most Div - Capturing Phase");
+  },
+  true
+);
+
+document.getElementById("outer").addEventListener(
+  "click",
+  function (event) {
+    console.log("Outer Div Clicked - Capturing Phase");
+  },
+  true
+);
+
+document.getElementById("inner").addEventListener(
+  "click",
+  function (event) {
+    console.log("Inner Div Clicked - Capturing Phase");
+  },
+  true
+);

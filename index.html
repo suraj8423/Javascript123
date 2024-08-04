@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="./index.js" defer></script>
+  <meta charset="UTF-8">
+  <title>Event Propagation Example</title>
+  <style>
+    div { padding: 20px; margin: 10px; border: 1px solid black; }
+  </style>
 </head>
 <body>
-    <button id="clickMe">Click me</button>
-    <input type="'text" onkeyup="betterFunction()">
+    <div id="outerDiv">
+        OuterMost div
+  <div id="outer">
+    Outer Div
+    <div id="inner">
+      Inner Div
+    </div>
+  </div></div>
+
+  <script src="index.js"></script>
 </body>
 </html>
