@@ -177,26 +177,8 @@
 //   console.log('Inner Div Clicked - Bubbling Phase');
 // });
 
-document.getElementById("outerDiv").addEventListener(
-  "click",
-  function (event) {
-    console.log("Outer most Div - Capturing Phase");
-  },
-  true
-);
-
-document.getElementById("outer").addEventListener(
-  "click",
-  function (event) {
-    console.log("Outer Div Clicked - Capturing Phase");
-  },
-  true
-);
-
-document.getElementById("inner").addEventListener(
-  "click",
-  function (event) {
-    console.log("Inner Div Clicked - Capturing Phase");
-  },
-  true
-);
+document.getElementById("category").addEventListener("click", function (event) {
+  console.log({ "activated Category": event });
+  let targetElement = document.getElementById(event.target.id).innerHTML;
+  console.log({ targetElement });
+});
