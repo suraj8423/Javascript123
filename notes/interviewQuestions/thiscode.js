@@ -141,3 +141,5 @@ const user8 = {
 setTimeout(user8.logMessage, 1000); // undefined, here this refers to the global object because setTimeout calls the function as a normal function
 
 setTimeout(() => user8.logMessage(), 1000); // Rishabh says hello!, here this refers to the user8 object because we are using arrow function
+
+// https://chatgpt.com/c/68b4ac2a-f900-832e-8bff-0c5d94fc0cd0

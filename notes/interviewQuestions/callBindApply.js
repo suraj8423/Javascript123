@@ -6,6 +6,85 @@
 // Bind: Returns a new function that, when called, has its `this` keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.
 // Apply: Similar to call, but takes an array of arguments instead of a list of arguments
 
+// 🔹 Key Rule for Arrow Functions
+
+// 👉 Arrow functions do not have their own this.
+// Instead, they lexically inherit this from their enclosing scope (the environment where they were created).
+
+// That means:
+
+// call, apply, and bind cannot change this inside an arrow function.
+
+// They only affect regular functions, not arrow functions.
+//Example 1: Normal Function vs Arrow Function with call
+
+const personX = {
+  name: "Suraj"
+};
+
+function normalFunc() {
+  console.log("Normal function:", this.name);
+}
+
+const arrowFunc = () => {
+  console.log("Arrow function:", this.name);
+};
+
+// Calling with call()
+normalFunc.call(personX); // Normal function: Suraj
+arrowFunc.call(personX);  // Arrow function: undefined (or error in strict mode)
+    
+// Example 2: bind with Arrow Function
+
+const personY = { name: "Tripathi" };
+
+const arrowFuncY = () => {
+  console.log("Arrow bound:", this.name);
+};
+
+const boundArrow = arrowFunc.bind(personY);
+boundArrow(); // Arrow bound: undefined
+
+//Even though we used bind(person), the arrow function’s this is not re-bound.
+// It will still use the surrounding lexical this (in this case, the global scope, where this.name is undefined).
+
+// Example 3: Arrow inside a Method
+
+const personZ = {
+  name: "Suraj",
+  regularMethod: function () {
+    console.log("Regular:", this.name);
+  },
+  arrowMethod: () => {
+    console.log("Arrow:", this.name);
+  }
+};
+
+personZ.regularMethod(); // Regular: Suraj
+personZ.arrowMethod();   // Arrow: undefined
+
+//🔎 Explanation:
+
+//regularMethod → this refers to person.
+
+// arrowMethod → this is inherited from where arrowMethod was defined (the outer scope, not person).
+
+// Example 4: Arrow Inside Regular Function (Lexical this)
+
+const personA = {
+  name: "Suraj",
+  show: function () {
+    const arrow = () => {
+      console.log("Arrow inside method:", this.name);
+    };
+    arrow();
+  }
+};
+
+personA.show(); // Arrow inside method: Suraj
+// ✅ Here, the arrow function inherits this from show, which is called on person.
+// So in this case, arrow function does capture the object context indirectly.
+
 // ---------------------------------------------- Call ---------------------------------------------------------
 
 var obj = {
