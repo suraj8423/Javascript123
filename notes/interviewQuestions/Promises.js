@@ -65,6 +65,7 @@ const secondPromise = new Promise((resolve,reject) => {
 });
 
 secondPromise.then((res) => {
+
      return res;
 }).then((res) => {
     console.log(res);
